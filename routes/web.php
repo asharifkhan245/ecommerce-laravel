@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +25,6 @@ Route::get('/register', [AuthController::class,'register'])->name('register');
 Route::post('register-user',[AuthController::class,'register_user'])->name('register_user');
 Route::post('login-user',[AuthController::class,'login_user'])->name('login_user');
 Route::get('logout',[AuthController::class,'logout'])->name('logout');
+
+
+Route::post('add-product', [AdminController::class,'add_product']);
