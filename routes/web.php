@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('website.home');
 })->name('/');
 
-
+// user authentication
 Route::get('/login', [AuthController::class,'login'])->name('login');
 Route::get('/register', [AuthController::class,'register'])->name('register');
 Route::post('register-user',[AuthController::class,'register_user'])->name('register_user');
