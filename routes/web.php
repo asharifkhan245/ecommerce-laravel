@@ -27,4 +27,3 @@ Route::post('login-user',[AuthController::class,'login_user'])->name('login_user
 Route::get('logout',[AuthController::class,'logout'])->name('logout');
 
 
-Route::post('add-product', [AdminController::class,'add_product']);
