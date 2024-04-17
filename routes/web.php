@@ -27,3 +27,7 @@ Route::post('login-user',[AuthController::class,'login_user'])->name('login_user
 Route::get('logout',[AuthController::class,'logout'])->name('logout');
 
 
+
+
+Route::get('/dashboard',[AdminController::class,'dashboard'])->name('dashboard');
+Route::get('/users', [AdminController::class,'users'])->name('users');
