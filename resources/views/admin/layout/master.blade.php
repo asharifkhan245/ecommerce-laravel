@@ -22,7 +22,6 @@
 
 @yield('content')
 
-@include('admin.components.footer')
 
 
 

@@ -32,8 +32,8 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/forms/basic_elements.html">
-                <span class="menu-title">Forms</span>
+              <a class="nav-link" href="{{route('product')}}">
+                <span class="menu-title">Add product</span>
                 <i class="mdi mdi-format-list-bulleted menu-icon"></i>
               </a>
             </li>

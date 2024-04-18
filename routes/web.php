@@ -31,3 +31,5 @@ Route::get('logout',[AuthController::class,'logout'])->name('logout');
 
 Route::get('/dashboard',[AdminController::class,'dashboard'])->name('dashboard');
 Route::get('/users', [AdminController::class,'users'])->name('users');
+Route::get('/product', [AdminController::class,'product'])->name('product');
+Route::post('/store-product', [AdminController::class,'store_product'])->name('store_product');
