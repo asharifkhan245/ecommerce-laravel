@@ -36,6 +36,7 @@ class AuthController extends Controller
 
 
         $input =  $request->all();
+        $input['role']='user';
 
         $user = User::create($input);
         auth()->login($user);

@@ -38,8 +38,8 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/charts/chartjs.html">
-                <span class="menu-title">Charts</span>
+              <a class="nav-link" href="{{route('viewproducts')}}">
+                <span class="menu-title">All products</span>
                 <i class="mdi mdi-chart-bar menu-icon"></i>
               </a>
             </li>

@@ -32,6 +32,14 @@ class AdminController extends Controller
     }
 
 
+    public function view_products(){
+
+
+        $product = Product::all();
+        return view('admin.pages.viewproducts',compact('product'));
+    }
+
+
     public function store_product(Request $request)
     {
         $request->validate([
