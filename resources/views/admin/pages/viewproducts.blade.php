@@ -47,12 +47,147 @@
                                     </td>
 
                                     <td>
-                                        <a href="" class="text-dark"><i class="fas fa-eye align-center text-center "></i></a>
+                                        <a href="#" class="text-dark" data-toggle="modal" data-target="#exampleModal{{$p->id}}"><i class="fas fa-eye align-center text-center"></i></a>
+
+                                        <!-- Unique modal ID with product ID appended -->
+                                        <div class="modal fade" id="exampleModal{{$p->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel{{$p->id}}" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered" role="document" role="document" style="max-width: 42rem;">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel{{$p->id}}"> View</h5>
+
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div style="max-height: 400px ;">
+
+                                                            <div class="row mb-3 ">
+
+                                                                <div class="row mb-3 ">
+                                                                    <div class="col-md-6">
+                                                                        <div style="border: 1px solid #cccc; border-radius: 10px; padding: 10px; background-color:#F9FAFB">
+                                                                            <p class="fw-3" style="color: #111827; font-weight:600;">Product Image</p>
+                                                                            <div style="width: 20px; height:18px;">
+                                                                                <img src="{{$p->main_image}}" alt="">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-md-6">
+                                                                        <div style="border: 1px solid #cccc; border-radius: 10px; padding: 10px; background-color:#F9FAFB">
+                                                                            <p class="fw-3" style="color: #111827; font-weight:600;">Product Name</p>
+                                                                            <span>{{$p->product_name}}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-3">
+
+                                                                    <div class="col-md-6">
+                                                                        <div style="border: 1px solid #cccc; border-radius: 10px; padding: 10px; background-color:#F9FAFB">
+                                                                            <p class="fw-4" style="color: #111827; font-weight:600;">Quantity</p>
+                                                                            <span>{{$p->available_quantity}}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div style="border: 1px solid #cccc; border-radius: 10px; padding: 10px; background-color:#F9FAFB">
+                                                                            <p class="fw-3" style="color: #111827; font-weight:600;">Price</p>
+                                                                            <span>{{$p->product_price}}</span>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+
+                                                                <div class="row mb-3">
+                                                                    <div class="col-md-6">
+                                                                        <div style="border: 1px solid #cccc; border-radius: 10px; padding: 10px; background-color:#F9FAFB">
+                                                                            <p class="fw-3" style="color: #111827; font-weight:600;">Category</p>
+                                                                            <span>{{$p->product_category}}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div style="border: 1px solid #cccc; border-radius: 10px; padding: 10px; background-color:#F9FAFB">
+                                                                            <p class="fw-4" style="color: #111827; font-weight:600;">Status</p>
+                                                                            <span>{{$p->status}}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- Add more product details as needed -->
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            <!-- You can add additional buttons here -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                     </td>
-                                  
 
                                     <td>
-                                        <a href="" class="text-dark"><i class="far fa-edit align-center text-center "></i></a>
+                                        <a href="#" class="text-dark" data-toggle="modal" data-target="#exampleModall{{$p->id}}"><i class="far fa-edit align-center text-center "></i></a>
+
+                                        <!-- Unique modal ID with product ID appended -->
+                                        <div class="modal fade" id="exampleModall{{$p->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabell{{$p->id}}" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered" role="document" role="document" style="max-width: 42rem; ">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabell{{$p->id}}">Edit</h5>
+
+                                                    </div>
+                                                    <div class="modal-body overflow-auto">
+                                                        <div style="max-height: 400px ;">
+
+                                                            <div class="row mb-3 ">
+
+                                                                <div class="col-md-6">
+                                                                    <p class="fw-3" style="color: #111827; font-weight:600;">Product Name</p>
+                                                                    <input type="text" class="form-control" value="{{$p->product_name}}">
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <p class="fw-3" style="color: #111827; font-weight:600;">Product Category</p>
+                                                                    <input type="text" class="form-control" value="{{$p->product_category}}">
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="row mb-3 ">
+
+                                                                <div class="col-md-6">
+                                                                    <p class="fw-3" style="color: #111827; font-weight:600;">Quantity</p>
+                                                                    <input type="text" class="form-control" value="{{$p->available_quantity}}">
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <p class="fw-3" style="color: #111827; font-weight:600;">Price</p>
+                                                                    <input type="text" class="form-control" value="{{$p->product_price}}">
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="row mb-3 ">
+
+                                                                <div class="col-md-6">
+                                                                    <p class="fw-3" style="color: #111827; font-weight:600;">Product image</p>
+                                                                    <input type="file" class="form-control" value="{{$p->available_quantity}}">
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <p class="fw-3" style="color: #111827; font-weight:600;">Description</p>
+                                                                    <input type="text" class="form-control h-100 overflow-auto" value="{{$p->product_description}}">
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-success">Save</button>
+                                                            <!-- You can add additional buttons here -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
                                     </td>
 
                                     <td>
