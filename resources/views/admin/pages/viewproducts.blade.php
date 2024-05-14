@@ -30,6 +30,8 @@
 
                                 @foreach ($product as $p )
 
+                                
+
 
 
                                 <tr>
@@ -43,7 +45,12 @@
                                         <img src="{{asset('storage/'.$p->main_image)}}" width="50px" class="me-0" alt="image">
                                     </td> -->
                                     <td>
-                                        <label class="badge badge-gradient-success">{{$p->status}}</label>
+                                        @if ($p->status == 'Active')
+                                        <label class="badge badge-gradient-success">Active</label>
+                                        @else
+                                        <label class="badge badge-gradient-danger">Inactive</label>
+
+                                        @endif
                                     </td>
 
                                     <td>
@@ -134,56 +141,62 @@
                                                         <h5 class="modal-title" id="exampleModalLabell{{$p->id}}">Edit</h5>
 
                                                     </div>
-                                                    <div class="modal-body overflow-auto">
-                                                        <div style="max-height: 400px ;">
 
-                                                            <div class="row mb-3 ">
 
-                                                                <div class="col-md-6">
-                                                                    <p class="fw-3" style="color: #111827; font-weight:600;">Product Name</p>
-                                                                    <input type="text" class="form-control" value="{{$p->product_name}}">
+                                                    <form action="{{route('edit_products',['id' => $p->id])}}" method="post">
+                                                        @csrf
+                                                        <div class="modal-body overflow-auto">
+                                                            <div style="max-height: 400px ;">
+
+                                                                <div class="row mb-3 ">
+
+                                                                    <div class="col-md-6">
+                                                                        <p class="fw-3" style="color: #111827; font-weight:600;">Product Name</p>
+                                                                        <input type="text" class="form-control" value="{{$p->product_name}}" name="product_name">
+                                                                    </div>
+
+                                                                    <div class="col-md-6">
+                                                                        <p class="fw-3" style="color: #111827; font-weight:600;">Product Category</p>
+                                                                        <input type="text" class="form-control" value="{{$p->product_category}}" name="product_category">
+                                                                    </div>
                                                                 </div>
 
-                                                                <div class="col-md-6">
-                                                                    <p class="fw-3" style="color: #111827; font-weight:600;">Product Category</p>
-                                                                    <input type="text" class="form-control" value="{{$p->product_category}}">
+
+                                                                <div class="row mb-3 ">
+
+                                                                    <div class="col-md-6">
+                                                                        <p class="fw-3" style="color: #111827; font-weight:600;">Quantity</p>
+                                                                        <input type="text" class="form-control" value="{{$p->available_quantity}}" name="available_quantity">
+                                                                    </div>
+
+                                                                    <div class="col-md-6">
+                                                                        <p class="fw-3" style="color: #111827; font-weight:600;">Price</p>
+                                                                        <input type="text" class="form-control" value="{{$p->product_price}}" name="product_price">
+                                                                    </div>
                                                                 </div>
+
+
+                                                                <div class="row mb-3 ">
+
+                                                                    <div class="col-md-6">
+                                                                        <p class="fw-3" style="color: #111827; font-weight:600;">Status</p>
+                                                                        <input type="select" class="form-control" value="{{$p->status}}" name="status">
+                                                                    </div>
+
+                                                                    <div class="col-md-6">
+                                                                        <p class="fw-3" style="color: #111827; font-weight:600;">Description</p>
+                                                                        <input type="text" class="form-control h-100 overflow-auto" value="{{$p->product_description}}" name="product_description">
+                                                                    </div>
+                                                                </div>
+
                                                             </div>
-
-
-                                                            <div class="row mb-3 ">
-
-                                                                <div class="col-md-6">
-                                                                    <p class="fw-3" style="color: #111827; font-weight:600;">Quantity</p>
-                                                                    <input type="text" class="form-control" value="{{$p->available_quantity}}">
-                                                                </div>
-
-                                                                <div class="col-md-6">
-                                                                    <p class="fw-3" style="color: #111827; font-weight:600;">Price</p>
-                                                                    <input type="text" class="form-control" value="{{$p->product_price}}">
-                                                                </div>
+                                                            <div class="modal-footer">
+                                                                <button type="submit" class="btn btn-success">Save</button>
+                                                                <!-- You can add additional buttons here -->
                                                             </div>
-
-
-                                                            <div class="row mb-3 ">
-
-                                                                <div class="col-md-6">
-                                                                    <p class="fw-3" style="color: #111827; font-weight:600;">Product image</p>
-                                                                    <input type="file" class="form-control" value="{{$p->available_quantity}}">
-                                                                </div>
-
-                                                                <div class="col-md-6">
-                                                                    <p class="fw-3" style="color: #111827; font-weight:600;">Description</p>
-                                                                    <input type="text" class="form-control h-100 overflow-auto" value="{{$p->product_description}}">
-                                                                </div>
-                                                            </div>
-
                                                         </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-success">Save</button>
-                                                            <!-- You can add additional buttons here -->
-                                                        </div>
-                                                    </div>
+
+                                                    </form>
                                                 </div>
                                             </div>
 
@@ -191,7 +204,11 @@
                                     </td>
 
                                     <td>
-                                        <a href="" class="text-dark"><i class="far fa-trash-alt align-center text-center "></i></a>
+
+                                    <form action="{{route('delete_product', ['id' => $p])}}" method="post">
+                                        @csrf
+                                        <button type="submit" class="text-dark border-radius-none"><i class="far fa-trash-alt align-center text-center "></i></button>
+                                    </form>
                                     </td>
                                 </tr>
                                 @endforeach

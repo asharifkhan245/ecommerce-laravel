@@ -68,4 +68,40 @@ class AuthController extends Controller
         return redirect()->route('/');
 
     }
+
+
+    public function edit_users(Request $request, $id){
+
+       $user =  User::find($id);
+
+       if($user){
+
+        if($request->name){
+            $user->name  = $request->name;
+        }
+        if($request->email){
+
+            $user->email = $request->email;
+        }
+
+        if($request->status){
+            $user->status = $request->status;
+        }
+
+        $user->save();
+
+        return redirect()->route('users');
+       }
+    }
+
+
+
+    public function delete_user($id){
+        $user = User::find($id);
+
+        $user->delete();
+
+        return redirect()->route('users');
+    }
+
 }

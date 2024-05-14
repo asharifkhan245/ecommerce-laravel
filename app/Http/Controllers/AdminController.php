@@ -53,18 +53,69 @@ class AdminController extends Controller
     
         $input = $request->all();
     
-        // Save the main image
+    
         $filename = rand(00000, 99999) . "." . $request->file('main_image')->extension();
         $path = $request->file('main_image')->storeAs('image', $filename, 'public');
         $input['main_image'] = $path;
-    
-        // Create the product
+
         Product::create($input);
     
-        // Flash success message to session
         Session::flash('success', 'Product added successfully.');
     
         return redirect()->back();
     }
     
+
+
+    public function edit_products(Request $request , $id){
+
+        $product = Product::find($id);
+
+
+        if($product){
+
+            if($request->product_name){
+
+                $product->product_name = $request->product_name;
+            }
+
+
+            if($request->product_category){
+
+                $product->product_category =  $request->product_category;
+            }
+
+            if($request->available_quantity){
+                $product->available_quantity = $request->available_quantity;
+            }
+
+            if($request->product_price){
+                $product->product_price = $request->product_price;
+            }
+
+            if($request->product_description){
+                $product->product_description = $request->product_description;
+            }
+
+            if($request->status){
+                $product->status = $request->status;
+            }
+
+            $product->save();
+
+
+            return redirect()->route('viewproducts');
+
+        }
+    }
+
+
+    public function delete_product($id){
+
+        $product = Product::find($id);
+        $product->delete();
+
+
+        return redirect()->route('viewproducts');
+    }
 }
