@@ -118,4 +118,13 @@ class AdminController extends Controller
 
         return redirect()->route('viewproducts');
     }
+
+
+    public function get_mens_products(){
+
+
+        $mens_products = Product::where('product_category','Mens')->get();
+
+        return view('website.mensproducts',compact('mens_products'));
+    }
 }

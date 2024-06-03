@@ -37,3 +37,4 @@ Route::post('/store-product', [AdminController::class,'store_product'])->name('s
 Route::get('/view-products', [AdminController::class,'view_products'])->name('viewproducts');
 Route::post('/edit-products/{id}', [AdminController::class,'edit_products'])->name('edit_products');
 Route::post('/delete-product/{id}', [AdminController::class,'delete_product'])->name('delete_product');
+Route::get('/get-mens-products', [AdminController::class,'get_mens_products'])->name('get_mens_products');
