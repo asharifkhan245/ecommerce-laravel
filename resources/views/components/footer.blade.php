@@ -1,6 +1,6 @@
   
     <!-- ***** Footer Start ***** -->
-    <footer>
+    <footer id="main-footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
@@ -18,9 +18,9 @@
                 <div class="col-lg-3">
                     <h4>Shopping &amp; Categories</h4>
                     <ul>
-                        <li><a href="#">Men’s Shopping</a></li>
-                        <li><a href="#">Women’s Shopping</a></li>
-                        <li><a href="#">Kid's Shopping</a></li>
+                        <li><a href="{{route('get_mens_products')}}">Men’s Shopping</a></li>
+                        <li><a href="{{route('get_womens_products')}}">Women’s Shopping</a></li>
+                        <li><a href="{{route('get_kids_products')}}">Kid's Shopping</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3">

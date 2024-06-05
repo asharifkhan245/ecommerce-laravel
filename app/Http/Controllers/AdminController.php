@@ -127,4 +127,31 @@ class AdminController extends Controller
 
         return view('website.mensproducts',compact('mens_products'));
     }
+
+    public function get_kids_products(){
+        $kids_products = Product::where('product_category', 'Kids')->get();
+
+        return view('website.kidsproducts', compact('kids_products'));
+    }
+
+    public function get_womens_products(){
+        $womens_products = Product::where('product_category', 'Womens')->get();
+
+        return view('website.womensproducts', compact('womens_products'));
+    }
+
+    public function show_single_product($id){
+
+        $product = Product::find($id);
+
+        if($product){
+
+            return view('website.showsingleproduct', compact('product'));
+        }
+    }
+
+    public function add_to_cart(){
+
+        return view('website.addtocart');
+    }
 }

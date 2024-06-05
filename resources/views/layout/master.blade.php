@@ -22,6 +22,21 @@
     <link rel="stylesheet" href="{{asset('css/owl-carousel.css')}}">
 
     <link rel="stylesheet" href="{{asset('css/lightbox.css')}}">
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.0/examples/checkout/"
+    />
+
+    <link href="{{asset('css/form-validation.css')}}" rel="stylesheet" />
+    <style>.icon-hover:hover {
+  border-color: #3b71ca !important;
+  background-color: white !important;
+  color: #3b71ca !important;
+}
+
+.icon-hover:hover i {
+  color: #3b71ca !important;
+}</style>
     <!--
 
 TemplateMo 571 Hexashop
@@ -58,7 +73,7 @@ https://templatemo.com/tm-571-hexashop
     <script src="{{asset('/js/slick.js')}}"></script>
     <script src="{{asset('/js/lightbox.js')}}"></script>
     <script src="{{asset('/js/isotope.js')}}"></script>
-
+    <script src="{{asset('/js/form-validation.js')}}"></script>
     <!-- Global Init -->
     <script src="{{asset('/js/custom.js')}}"></script>
 

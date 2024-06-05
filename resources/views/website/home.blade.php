@@ -36,7 +36,7 @@
                                             <h4>Women</h4>
                                             <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                             <div class="main-border-button">
-                                                <a href="#">Discover More</a>
+                                                <a href="{{route('get_womens_products')}}">Discover More</a>
                                             </div>
                                         </div>
                                     </div>
@@ -76,7 +76,7 @@
                                             <h4>Kids</h4>
                                             <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                             <div class="main-border-button">
-                                                <a href="#">Discover More</a>
+                                                <a href="{{route('get_kids_products')}}">Discover More</a>
                                             </div>
                                         </div>
                                     </div>
@@ -134,7 +134,7 @@
                             <div class="thumb">
                                 <div class="hover-content">
                                     <ul>
-                                        <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
+                                        <li><a href=""><i class="fa fa-eye"></i></a></li>
                                         <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
                                         <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                     </ul>
